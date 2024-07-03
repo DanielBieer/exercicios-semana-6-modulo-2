@@ -1,38 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Footer from './components/Footer'
+import Header from './components/Header'
+import CardBicicleta from './components/CardBicicleta'
 
 function App() {
-  let count = 0
-  function setCount() {
-    count += 1
-    console.log('COUNT: ', count)
-  }
-  // const [count, setCount] = useState(0)
+
+  const bicicletas = [
+    {
+      id: 0, nomeModelo: 'Magic Might', preco: 2499,
+      imgSrc: 'https://www.origamid.com/projetos/bikcraft/img/bicicletas/magic-home.jpg',            
+    },
+    {
+      id: 1, nomeModelo: 'Nimbus Stark', preco: 4999,
+      imgSrc: 'https://www.origamid.com/projetos/bikcraft/img/bicicletas/nimbus-home.jpg',            
+    },
+    {
+      id: 2, nomeModelo: 'Nebula Cosmic', preco: 3999,
+      imgSrc: 'https://www.origamid.com/projetos/bikcraft/img/bicicletas/nebula-home.jpg',      
+    }
+  ]
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount()}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Header></Header>      
+
+      {bicicletas.map(bike =>
+        <CardBicicleta 
+          key={bike.id} 
+          imgSrc={bike.imgSrc} 
+          preco={bike.preco} 
+          nomeModelo={bike.nomeModelo}/>
+      )}
+
+      <Footer></Footer>      
     </>
   )
 }
