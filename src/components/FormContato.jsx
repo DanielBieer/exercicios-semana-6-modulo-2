@@ -13,7 +13,7 @@ function FormContato() {
             nome: nome,
             telefone: telefone,
             email: email,
-            // mensagem: mensagem
+            mensagem: mensagem
         }
 
         console.log('DADO ENVIADO: ', objetoContato)
@@ -40,11 +40,11 @@ function FormContato() {
                 </div>
 
                 <div className="form">
-                    <input placeholder="Nome" value={nome} onChange={(e) => setNome(e.target.value)}/>
-                    <input placeholder="Telefone" value={telefone} onChange={(e) => setTelefone(e.target.value)}/>
-                    <input placeholder="E-mail" value={email} onChange={(e) => setEmail(e.target.value)}/>
+                    <input type='text' placeholder="Nome" value={nome} onChange={(e) => setNome(e.target.value)}/>
+                    <input type='text' placeholder="Telefone" value={telefone} onChange={(e) => setTelefone(e.target.value)}/>
+                    <input type='email' placeholder="E-mail" value={email} onChange={(e) => setEmail(e.target.value)}/>
                     {/* value={nome} onChange={(e) => setNome(e.target.value)} */}
-                    <textarea placeholder="Mensagem"></textarea>
+                    <textarea placeholder="Mensagem" value={mensagem} onChange={(e) => setMensagem(e.target.value)}></textarea>
                     <button onClick={() => enviarMensagem()}>Enviar Mensagem</button>
                 </div>
             </div>

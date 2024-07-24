@@ -2,6 +2,7 @@ import './App.css'
 import Footer from './components/Footer'
 import Header from './components/Header'
 import CardBicicleta from './components/CardBicicleta'
+import FormContato from './components/FormContato'
 
 function App() {
 
@@ -24,13 +25,14 @@ function App() {
     <>
       <Header></Header>      
 
-      {bicicletas.map(bike =>
+      {/* {bicicletas.map(bike =>
         <CardBicicleta 
           key={bike.id} 
           imgSrc={bike.imgSrc} 
           preco={bike.preco} 
           nomeModelo={bike.nomeModelo}/>
-      )}
+      )} */}
+      <FormContato></FormContato>
 
       <Footer></Footer>      
     </>
